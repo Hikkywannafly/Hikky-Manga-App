@@ -1,14 +1,17 @@
-import Head from 'next/head'
+import Head from '~/components/shared/Head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
+import React from 'react'
 
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <>
-      <h1 className=' text-red-600'>Hikky</h1>
-    </>
+    <React.Fragment>
+      <Head title="Hikky Manga" />
+      <h1>Heelo</h1>
+
+    </React.Fragment>
   )
 }
