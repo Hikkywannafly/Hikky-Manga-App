@@ -1,12 +1,24 @@
 import React from 'react'
-
-interface BaseLayout {
+import { Header, Footer } from '~/components/partials';
+interface BaseLayoutProps {
     showHeader?: boolean;
     showFooter?: boolean;
+    children: React.ReactNode;
+
 }
 
-export default function BaseLayout({ }: Props) {
+export default function BaseLayout({
+    children,
+    showFooter = true,
+    showHeader = true
+}: BaseLayoutProps) {
     return (
-        <div>BaseLaout</div>
-    )
+        <React.Fragment>
+            {showHeader && <Header />}
+            <main className='text-white'>
+                {children}
+            </main>
+            {showFooter && <Footer />}
+        </React.Fragment>
+    );
 }

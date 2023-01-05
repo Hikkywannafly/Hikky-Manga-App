@@ -11,7 +11,6 @@ export default function Home() {
     <React.Fragment>
       <Head title="Hikky Manga" />
       <h1>Heelo</h1>
-
     </React.Fragment>
   )
 }

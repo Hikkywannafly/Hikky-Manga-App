@@ -17,7 +17,7 @@ body {
   font-size: 1.6rem;
   font-family: "Fira Sans", Arial, sans-serif;
   text-rendering: optimizeSpeed;
-  @apply w-full min-h-screen overflow-x-hidden bg-zinc-900;
+  @apply w-full min-h-screen overflow-x-hidden bg-blackground text-primary;
 }
 
 *:focus {
