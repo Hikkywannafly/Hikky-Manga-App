@@ -13,10 +13,10 @@ const HeaderSearch = (props: Props) => {
 
             />
             <div className=" mx-3 flex gap-2 text-base">
-                <div className="hidden rounded-lg bg-tertiary px-2 py-1  transition-all  md:block">
+                <div className="hidden rounded-lg bg-tertiary px-2 font-semibold py-1 md:block">
                     Ctrl
                 </div>
-                <div className="hidden rounded-lg bg-tertiary px-2 py-1  transition-all  md:block">
+                <div className="hidden rounded-lg bg-tertiary px-2 font-semibold py-1 md:block">
                     K
                 </div>
             </div>

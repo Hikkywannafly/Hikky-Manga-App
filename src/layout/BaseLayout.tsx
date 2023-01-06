@@ -1,5 +1,6 @@
 import React from 'react'
 import { Header, Footer } from '~/components/partials';
+import { SeachModal } from '~/components/shared';
 interface BaseLayoutProps {
     showHeader?: boolean;
     showFooter?: boolean;
@@ -15,6 +16,7 @@ export default function BaseLayout({
     return (
         <React.Fragment>
             {showHeader && <Header />}
+            <SeachModal />
             <main className='text-white'>
                 {children}
             </main>
