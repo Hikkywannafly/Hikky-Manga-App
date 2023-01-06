@@ -17,11 +17,27 @@ module.exports = {
             //         },
             //     },
             // },
+            keyframes: {
+                wiggle: {
+                    "0%, 100%": { transform: "rotate(-3deg)" },
+                    "50%": { transform: "rotate(3deg)" }
+                },
+                fade: {
+                    "0%": { opacity: 0 },
+
+                    "100%": { opacity: 1 }
+                },
+            },
+            animation: {
+                wiggle: "wiggle 1000ms ease-in-out",
+                fade: "fade 300ms ease-in-out",
+
+            },
             colors: {
                 primary: '#F5F5F5',
+                secondary: '#393a3b',
                 blackground: '#0D1117',
-
-
+                highlight: '#FFFF00',
             }
 
         },

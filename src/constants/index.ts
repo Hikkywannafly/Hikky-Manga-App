@@ -6,4 +6,12 @@ export const GENRES_COMICS: DropDownItem[] = [
     { label: "Comedy", href: "Comedy" },
     { label: "Crime", href: "Crime" },
     { label: "Harem", href: "Crime" },
+    { label: "Xem thêm", href: "more" },
+]
+
+export const RANKING_COMICS: DropDownItem[] = [
+    { label: "Mới nhất", href: "new" },
+    { label: "Đang hot", href: "hot" },
+    { label: "Được yêu thích", href: "favorite" },
+    { label: "Được xem nhiều", href: "view" },
 ]

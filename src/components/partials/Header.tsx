@@ -1,9 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { HamburgerMenu } from '~/components/icons';
 import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io'
-import { GENRES_COMICS } from '~/constants';
+import { GENRES_COMICS, RANKING_COMICS } from '~/constants';
 import DropDown from '~/components/shared/DropDown';
+import { DropDownProps } from '~/components/shared/DropDown'
+type NavItemProps = {
+    label: string,
+
+}
+const NavItem = ({ label }: NavItemProps) => (
+    <li className="">
+        <div className="flex hover:text-highlight items-center text-2xl uppercase font-semibold cursor-pointer transform transition-all duration-300">
+            {label}
+        </div>
+    </li>
+)
 const Header = () => {
+    const [isOpenGenre, setIsOpenGenre] = useState(false);
+    const [isOpenRanking, setIsOpenRanking] = useState(false);
     return (
         <React.Fragment>
             <header className="py-4">
@@ -14,32 +28,35 @@ const Header = () => {
                         <div className="font-semibold text-3xl cursor-pointer transform hover:scale-105 transition duration-300 ">
                             HikkyManga
                         </div>
+
                     </div>
                     {/* navigation */}
                     <nav className="">
-                        <ul className="flex items-center space-x-8">
-                            <li className="text-2xl uppercase font-semibold cursor-pointer transform  transition duration-300 ">
-                                <div className="flex gap-1 items-center">
+                        <ul className="flex items-center space-x-14">
+                            <li
+                                onMouseEnter={() => { setIsOpenGenre(true) }}
+                                onMouseLeave={() => { setIsOpenGenre(false) }}
+                                className="cursor-pointer relative  transform transition duration-300 ">
+                                <div className={`flex gap-1 items-center text-2xl uppercase font-semibold ${isOpenGenre ? 'text-highlight' : null}`}>
                                     Thể loại <IoIosArrowDown className="w-6 h-6 font-bold" />
                                 </div>
-                                <DropDown options={GENRES_COMICS} show={true} isMore={false} />
-
+                                <DropDown options={GENRES_COMICS} show={isOpenGenre} isMore={true} />
                             </li>
-                            <li className="text-2xl uppercase font-semibold cursor-pointer transform  transition duration-300 ">
-                                HOT
+                            <li
+                                onMouseEnter={() => { setIsOpenRanking(true) }}
+                                onMouseLeave={() => { setIsOpenRanking(false) }}
+                                className="cursor-pointer transform transition duration-300 ">
+                                <div className={`flex gap-1 items-center text-2xl uppercase font-semibold ${isOpenRanking ? 'text-highlight' : null}`}>
+                                    Xếp hạng <IoIosArrowDown className="w-6 h-6 font-bold" />
+                                </div>
+                                <DropDown options={RANKING_COMICS} show={isOpenRanking} isMore={true} />
                             </li>
-                            <li className="text-2xl uppercase font-semibold cursor-pointer transform  transition duration-300 ">
-                                Ủng hộ
-                            </li>
-                            <li className="text-2xl uppercase font-semibold cursor-pointer transform  transition duration-300 ">
-                                FANPAGE
-                            </li>
-                            <li className="text-2xl uppercase font-semibold cursor-pointer transform  transition duration-300 ">
-                                TIN TỨC
-                            </li>
+                            <NavItem label="Truyện mới" />
+                            <NavItem label="Ủng hộ" />
+                            <NavItem label="Tin Tức" />
                         </ul>
-
                     </nav>
+                    {/* search */}
                     <div className="">
                         Search
                     </div>
