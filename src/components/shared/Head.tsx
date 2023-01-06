@@ -6,12 +6,12 @@ interface HeadProps {
     keywords?: string;
     image?: string;
 }
-export default function Head({
+const Head = ({
     title = 'Hikky Manga',
     description = 'Web app đọc truyện tranh online',
     keywords = 'Next.js, TypeScript, Tailwind, Starter',
     image = 'https://nextjs.org/static/images/twitter-cards/nextjs-twitter-card.png',
-}: HeadProps) {
+}: HeadProps) => {
     return (
         <NextHead>
             <meta charSet="UTF-8" />
@@ -44,3 +44,4 @@ export default function Head({
         </NextHead>
     )
 }
+export default Head;

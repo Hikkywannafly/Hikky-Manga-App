@@ -13,11 +13,11 @@ export interface DropDownProps {
     isMore: boolean,
 }
 
-function DropDown({
+const DropDown = ({
     options,
     show,
     isMore,
-}: DropDownProps) {
+}: DropDownProps) => {
 
     const [offsetTop, setOffsetTop] = useState(0);
 
