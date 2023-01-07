@@ -2,7 +2,8 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import BaseLayout from '~/layout/BaseLayout'
 import React from 'react';
-export default function MyApp({ Component, pageProps }: AppProps) {
+import { Provider, atom, useAtom } from 'jotai';
+const MyApp = ({ Component, pageProps }: AppProps) => {
 
   const getLayout =
     // @ts-ignore
@@ -17,7 +18,10 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <React.Fragment>
-      {getLayout(<Component {...pageProps} />)}
+      <Provider>
+        {getLayout(<Component {...pageProps} />)}
+      </Provider>
     </React.Fragment>
   )
 }
+export default MyApp;

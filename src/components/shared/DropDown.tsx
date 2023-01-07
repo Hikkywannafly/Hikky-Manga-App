@@ -52,7 +52,7 @@ const DropDown = ({
                                     {item.label}
                                     {isMore &&
                                         index === options.length - 1 && (
-                                            <IoIosArrowForward className="h-6 w-6 text-white" />
+                                            <IoIosArrowForward className="h-6 w-6" />
                                         )}
                                 </Link>
                             </div>

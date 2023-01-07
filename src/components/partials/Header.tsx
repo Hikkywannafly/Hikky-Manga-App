@@ -20,7 +20,7 @@ const Header = () => {
     const [isOpenRanking, setIsOpenRanking] = useState(false);
     return (
         <React.Fragment>
-            <header className="py-4">
+            <header className="p-4">
                 <div className="mx-auto justify-between flex h-full w-full items-center md:max-w-[644px] lg:max-w-[1200px]">
                     {/* logo */}
                     <div className="flex items-center ">
@@ -31,7 +31,7 @@ const Header = () => {
 
                     </div>
                     {/* navigation */}
-                    <nav className="">
+                    <nav className=" hidden md:block">
                         <ul className="flex items-center space-x-8">
                             <li
                                 onMouseEnter={() => { setIsOpenGenre(true) }}

@@ -1,19 +1,22 @@
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
 import { IoIosSearch } from 'react-icons/io'
+import { useSetAtom } from 'jotai'
+import { showSearchModalAtom } from '~/store'
+import { useAtomValue } from 'jotai'
 const MyModal = () => {
-    let [isOpen, setIsOpen] = useState(true)
-
+    const setShowSearchModal = useSetAtom(showSearchModalAtom)
+    const showSearchModal = useAtomValue(showSearchModalAtom);
     function closeModal() {
-        setIsOpen(false)
+        setShowSearchModal(false)
+    }
+    function openModal() {
+        setShowSearchModal(true)
     }
 
-    function openModal() {
-        setIsOpen(true)
-    }
 
     return (
-        <Transition appear show={true} as={Fragment}>
+        <Transition appear show={showSearchModal} as={Fragment}>
             <Dialog as="div" className="relative z-[999] " onClose={closeModal}>
                 <Transition.Child
                     as={Fragment}
@@ -38,7 +41,8 @@ const MyModal = () => {
                             leaveTo="opacity-0 scale-95"
 
                         >
-                            <Dialog.Panel className="max-h-[70vh] w-[85%] md:w-[75%] lg:max-h-[85vh] transform overflow-hidden rounded-2xl bg-blackground p-6 text-left align-middle shadow-xl transition-all">
+                            <Dialog.Panel className="max-h-[70vh] w-[85%] md:w-[75%] lg:max-h-[85vh] 
+                             transform overflow-hidden rounded-2xl bg-blackground p-10 text-left align-middle shadow-xl transition-all">
                                 <div className="">
                                     <Dialog.Title
                                         as="h1"
@@ -48,9 +52,8 @@ const MyModal = () => {
                                     </Dialog.Title>
                                 </div>
 
-                                <div className="my-10 flex h-[60px] items-center rounded-xl bg-secondary py-4 text-white ">
-                                    <IoIosSearch className="mx-2 h-10 w-10 md:mx-6 md:h-14 md:w-14" />
-
+                                <div className="my-10 flex h-[45px] items-center rounded-xl bg-secondary py-3 text-white ">
+                                    <IoIosSearch className="mx-2 h-8 w-8 md:mx-6 md:h-12 md:w-14" />
                                 </div>
                             </Dialog.Panel>
                         </Transition.Child>

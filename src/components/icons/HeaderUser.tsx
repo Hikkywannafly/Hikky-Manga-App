@@ -5,7 +5,7 @@ type Props = {}
 
 const HeaderUser = (props: Props) => {
     return (
-        <div className='bg-secondary items-center rounded-full p-4 '>
+        <div className='bg-secondary items-center rounded-full p-3  max-h-[35px]  '>
             <FaUserAlt className='w-8 h-8' />
         </div>
     )

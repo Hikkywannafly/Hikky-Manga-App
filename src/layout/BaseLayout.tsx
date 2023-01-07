@@ -13,6 +13,7 @@ export default function BaseLayout({
     showFooter = true,
     showHeader = true
 }: BaseLayoutProps) {
+
     return (
         <React.Fragment>
             {showHeader && <Header />}

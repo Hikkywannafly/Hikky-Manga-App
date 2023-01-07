@@ -1,11 +1,20 @@
 import React from 'react'
 import Link from 'next/link'
 import { IoIosSearch } from 'react-icons/io'
+import { useSetAtom } from 'jotai'
+import { showSearchModalAtom } from '~/store'
 type Props = {}
 
 const HeaderSearch = (props: Props) => {
+    const setShowSearchModal = useSetAtom(showSearchModalAtom)
+    const handleShowSearchModal = () => {
+        setShowSearchModal(true)
+    }
+
     return (
-        <div className='ml-16 flex h-[40%] w-fit items-center justify-between rounded-2xl  bg-secondary text-white lg:w-[68%]'>
+        <div
+            onClick={handleShowSearchModal}
+            className='flex max-h-[35px]  w-fit items-center justify-between rounded-2xl bg-secondary text-white lg:w-[68%]'>
             <input
                 readOnly
                 className="hidden w-[80%] bg-transparent mx-4 placeholder:text-white md:block"
@@ -22,8 +31,7 @@ const HeaderSearch = (props: Props) => {
             </div>
 
             <button
-                className="h-full w-fit rounded-2xl p-4 hover:cursor-pointer hover:opacity-60"
-
+                className="h-full w-fit rounded-2xl px-4 hover:cursor-pointer hover:opacity-60"
             >
                 <IoIosSearch className="h-8 w-8" />
             </button>
