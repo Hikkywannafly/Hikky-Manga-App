@@ -9,7 +9,7 @@
 ## Tech stack
 
 -   NextJS + ReactJS
--   Zustand
+-   Jotai
 -   Mongodb
 -   Next-auth
 -   TailwindCSS 
