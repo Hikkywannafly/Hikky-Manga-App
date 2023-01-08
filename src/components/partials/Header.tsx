@@ -10,7 +10,7 @@ type NavItemProps = {
 }
 const NavItem = ({ label }: NavItemProps) => (
     <li className="">
-        <div className="flex hover:text-highlight items-center text-2xl uppercase font-bold cursor-pointer transform transition-all duration-300">
+        <div className="flex hover:text-highlight opacity-80 items-center text-2xl uppercase font-bold cursor-pointer transform transition-all duration-300">
             {label}
         </div>
     </li>
@@ -20,12 +20,12 @@ const Header = () => {
     const [isOpenRanking, setIsOpenRanking] = useState(false);
     return (
         <React.Fragment>
-            <header className="p-4">
+            <header className="p-4 z-[999] px-2 top-0 left-0 w-full fixed ">
                 <div className="mx-auto justify-between flex h-full w-full items-center md:max-w-[644px] lg:max-w-[1200px]">
                     {/* logo */}
                     <div className="flex items-center ">
                         <HamburgerMenu />
-                        <div className="font-semibold text-3xl cursor-pointer transform hover:scale-105 transition duration-300 ">
+                        <div className="font-semibold opacity-80 text-3xl cursor-pointer transform hover:scale-105 transition duration-300 ">
                             HikkyManga
                         </div>
 
@@ -37,7 +37,7 @@ const Header = () => {
                                 onMouseEnter={() => { setIsOpenGenre(true) }}
                                 onMouseLeave={() => { setIsOpenGenre(false) }}
                                 className="cursor-pointer relative  transform transition duration-300 ">
-                                <div className={`flex gap-1 items-center text-2xl uppercase font-bold ${isOpenGenre ? 'text-highlight' : null}`}>
+                                <div className={`flex gap-1 opacity-80 items-center text-2xl uppercase font-bold ${isOpenGenre ? 'text-highlight' : null}`}>
                                     Thể loại <IoIosArrowDown className="w-6 h-6 font-bold" />
                                 </div>
                                 <DropDown options={GENRES_COMICS} show={isOpenGenre} isMore={true} />
@@ -46,7 +46,7 @@ const Header = () => {
                                 onMouseEnter={() => { setIsOpenRanking(true) }}
                                 onMouseLeave={() => { setIsOpenRanking(false) }}
                                 className="cursor-pointer transform transition duration-300 ">
-                                <div className={`flex gap-1 items-center text-2xl uppercase font-bold ${isOpenRanking ? 'text-highlight' : null}`}>
+                                <div className={`flex gap-1 opacity-80 items-center text-2xl uppercase font-bold ${isOpenRanking ? 'text-highlight' : null}`}>
                                     Xếp hạng <IoIosArrowDown className="w-6 h-6 font-bold" />
                                 </div>
                                 <DropDown options={RANKING_COMICS} show={isOpenRanking} isMore={false} />
@@ -60,10 +60,7 @@ const Header = () => {
                     <div className="flex gap-3 ">
                         <HeaderSearch />
                         <HeaderUser />
-
-
                     </div>
-
                 </div>
             </header>
         </React.Fragment >

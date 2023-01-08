@@ -33,7 +33,7 @@ const DropDown = ({
 
     return (
         <ul
-            className="animate-fade absolute top-full left-1/2 z-50 flex h-fit w-fit -translate-x-1/2 flex-col flex-nowrap items-center justify-evenly rounded-2xl bg-secondary py-1 transition-all "
+            className="animate-fade absolute top-full left-1/2 z-50 flex h-fit w-fit -translate-x-1/2 flex-col flex-nowrap items-center justify-evenly rounded-2xl bg-secondary  py-1 transition-all "
             onMouseLeave={() => {
                 setOffsetTop(0);
             }}

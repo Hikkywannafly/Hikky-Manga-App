@@ -1,5 +1,5 @@
-import React from 'react'
-import { Header, Footer } from '~/components/partials';
+import React from 'react';
+import dynamic from 'next/dynamic';
 import { SeachModal } from '~/components/shared';
 interface BaseLayoutProps {
     showHeader?: boolean;
@@ -7,6 +7,8 @@ interface BaseLayoutProps {
     children: React.ReactNode;
 
 }
+const Header = dynamic(() => import('~/components/partials/Header'));
+const Footer = dynamic(() => import('~/components/partials/Footer'));
 
 export default function BaseLayout({
     children,
@@ -15,6 +17,7 @@ export default function BaseLayout({
 }: BaseLayoutProps) {
 
     return (
+        
         <React.Fragment>
             {showHeader && <Header />}
             <SeachModal />
