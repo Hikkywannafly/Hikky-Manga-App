@@ -51,7 +51,6 @@ const SwiperBanner = (props: Props) => {
 
             </Swiper>
 
-
         </div >
     )
 }

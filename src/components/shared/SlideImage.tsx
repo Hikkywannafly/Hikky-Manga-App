@@ -17,10 +17,16 @@ const SlideImage = ({
         <div className="flex-none max-w-screen-md lg:max-w-screen-md xl:max-w-screen-lg 2xl:max-w-screen-xl 
         w-full rounded-xl  overflow-hidden relative z-10 snap-center snap-always transition mx-auto" >
 
-            <img src={`${image}`} alt="" />
+            <img className="absolute w-full h-full top-0 left-0 object-cover object-center rounded-lg z-10 bg-hero brightness-75" src={`${image}`} alt="" />
 
             <div className="absolute top-0 left-0 w-full h-full bg-hero z-10 rounded-xl"></div>
 
+            <canvas width="16" height="9" className="md:hidden rounded-lg w-full brightness-75 transition duration-500"
+                style={{ boxShadow: `rgba(100, 47, 14, 0.314) 0px 6px 20px 2px`, backgroundColor: ` rgb(17, 24, 39)` }}></canvas>
+            <canvas width="32" height="15" className="hidden md:block rounded-lg w-full brightness-75 transition duration-500"
+                style={{ boxShadow: `rgba(100, 47, 14, 0.314) 0px 6px 20px 2px`, backgroundColor: ` rgb(17, 24, 39)` }}>
+
+            </canvas>
             {/* info comic */}
             <div className="absolute w-full bottom-0 left-0 flex justify-between items-center p-3 md:p-6 z-10 ">
                 <div className="flex flex-col gap-1 lg:gap-2 w-full overflow-hidden">
@@ -44,7 +50,7 @@ const SlideImage = ({
                 </div>
             </div>
 
-        </div>
+        </div >
 
 
     )
