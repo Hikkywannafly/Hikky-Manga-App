@@ -1,1 +1,1 @@
-export { default as useGrabColorImage } from './useGrabColorImage'
+export { default as GrabColorImage } from './useGrabColorImage'

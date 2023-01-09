@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { HamburgerMenu } from '~/components/icons';
-import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io'
+import { IoIosArrowDown } from 'react-icons/io'
 import { GENRES_COMICS, RANKING_COMICS } from '~/constants';
 import DropDown from '~/components/shared/DropDown';
 import { HeaderSearch, HeaderUser } from '~/components/icons';

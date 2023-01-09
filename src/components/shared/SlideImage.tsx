@@ -17,7 +17,10 @@ const SlideImage = ({
         <div className="flex-none max-w-screen-md lg:max-w-screen-md xl:max-w-screen-lg 2xl:max-w-screen-xl 
         w-full rounded-xl  overflow-hidden relative z-10 snap-center snap-always transition mx-auto" >
 
-            <img className="absolute w-full h-full top-0 left-0 object-cover object-center rounded-lg z-10 bg-hero brightness-75" src={`${image}`} alt="" />
+            <img className="absolute w-full h-full top-0 left-0 object-cover object-center rounded-lg z-10 bg-hero brightness-75"
+                src={image}
+                alt={title}
+            />
 
             <div className="absolute top-0 left-0 w-full h-full bg-hero z-10 rounded-xl"></div>
 
@@ -33,7 +36,7 @@ const SlideImage = ({
                     <div className="max-w-[34rem] flex-0">
                         <a href="/mangas/136" className="">
                             <h2 className="font-head font-bold overflow-ellipsis whitespace-nowrap overflow-hidden md:overflow-auto md:whitespace-normal break-words text-xl md:text-2xl lg:text-3xl text-white  tracking-wider">
-                                Bungou Stray Dogs (FULL HD)
+                                {title}
                             </h2>
                         </a>
                     </div>
