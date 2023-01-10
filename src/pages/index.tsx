@@ -15,6 +15,7 @@ const Home = () => {
   const img = useAtomValue(curentImageBannerAtom);
   const [blackground, setBlackground] = useState<Blackground[]>([]);
 
+
   useEffect(() => {
     if (img) {
       extractColors(`http://localhost:3000/${img}`)
@@ -38,11 +39,13 @@ const Home = () => {
         {/* banner */}
         <SwiperBanner />
         {/* blackground */}
+
         <div className="absolute w-full h-[calc(5rem+80%)] md:h-[calc(7rem+80%)] top-0 left-0 brightness-75 animate-fadeSlow"
           style={{
             background: `linear-gradient(132deg, ${blackground[0]} 0%, ${blackground[1]} 100%)`
           }}>
         </div>
+
       </div>
     </React.Fragment >
   )

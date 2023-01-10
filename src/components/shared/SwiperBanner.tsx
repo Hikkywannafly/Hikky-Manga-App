@@ -36,7 +36,7 @@ const SwiperBanner = ({
                 loop={true}
                 modules={[EffectFade, Autoplay, Pagination, Lazy]}
                 autoplay={{
-                    delay: 2000,
+                    delay: 5000,
                     disableOnInteraction: false,
                     pauseOnMouseEnter: true,
                 }}

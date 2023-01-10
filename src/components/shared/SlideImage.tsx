@@ -27,7 +27,7 @@ const SlideImage = ({
             <canvas width="16" height="9" className="md:hidden rounded-lg w-full brightness-75 transition duration-500"
                 style={{ boxShadow: `rgba(100, 47, 14, 0.314) 0px 6px 20px 2px`, backgroundColor: ` rgb(17, 24, 39)` }}></canvas>
             <canvas width="32" height="15" className="hidden md:block rounded-lg w-full brightness-75 transition duration-500"
-                style={{ boxShadow: `rgba(100, 47, 14, 0.314) 0px 6px 20px 2px`, backgroundColor: ` rgb(17, 24, 39)` }}>
+            >
 
             </canvas>
             {/* info comic */}
