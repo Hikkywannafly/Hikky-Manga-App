@@ -1,9 +1,8 @@
 import { Dialog, Transition } from '@headlessui/react'
-import { Fragment, useState } from 'react'
+import React, { Fragment, useState } from 'react'
 import { IoIosSearch } from 'react-icons/io'
-import { useSetAtom } from 'jotai'
+import { useSetAtom, useAtomValue } from 'jotai'
 import { showSearchModalAtom } from '~/store'
-import { useAtomValue } from 'jotai'
 const MyModal = () => {
     const setShowSearchModal = useSetAtom(showSearchModalAtom)
     const showSearchModal = useAtomValue(showSearchModalAtom);

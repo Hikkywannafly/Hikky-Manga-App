@@ -17,7 +17,6 @@ export default function BaseLayout({
 }: BaseLayoutProps) {
 
     return (
-        
         <React.Fragment>
             {showHeader && <Header />}
             <SeachModal />

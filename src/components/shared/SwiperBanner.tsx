@@ -7,14 +7,16 @@ import "swiper/css/pagination";
 import 'swiper/css/effect-fade';
 import { curentImageBannerAtom } from "~/store";
 import { useSetAtom } from "jotai";
-import { FAKE_BANNER } from "~/constants/testData";
+import { Media } from "~/types/anilist";
 
 interface SwiperBannerProps {
-    BannerList?: any,
+    data?: Media[],
+
+
 }
 
 const SwiperBanner = ({
-    BannerList = FAKE_BANNER
+    data
 }: SwiperBannerProps) => {
     const setCurrentImage = useSetAtom(curentImageBannerAtom);
     return (
@@ -41,7 +43,6 @@ const SwiperBanner = ({
                     pauseOnMouseEnter: true,
                 }}
             >
-
                 {
                     FAKE_BANNER.map((item: any) =>
                     (
