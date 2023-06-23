@@ -15,3 +15,5 @@ export const RANKING_COMICS: DropDownItem[] = [
     { label: "Được yêu thích", href: "favorite" },
     { label: "Được xem nhiều", href: "view" },
 ]
+
+export const REVALIDATE_TIME = 24 * 60 * 60 // 24 hours

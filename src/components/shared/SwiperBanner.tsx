@@ -1,33 +1,22 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide, useSwiperSlide } from "swiper/react";
-import { Autoplay, EffectFade, Pagination, Lazy } from 'swiper';
+import { Autoplay, EffectFade, Pagination, Lazy, Navigation } from 'swiper';
 import { SlideImage } from "~/components/shared";
 import "swiper/css";
 import "swiper/css/pagination";
 import 'swiper/css/effect-fade';
-import { curentImageBannerAtom } from "~/store";
-import { useSetAtom } from "jotai";
+import "swiper/css/navigation";
 import { Media } from "~/types/anilist";
 
 interface SwiperBannerProps {
     data?: Media[],
-
-
 }
 
-const SwiperBanner = ({
-    data
-}: SwiperBannerProps) => {
-    const setCurrentImage = useSetAtom(curentImageBannerAtom);
+const SwiperBanner: React.FC<SwiperBannerProps> = (props) => {
+    const { data } = props;
     return (
-
         <div className="m-2 md:m-0 snap-x snap-mandatory overflow-x-auto flex w-full translate-y-[calc(5rem)] md:translate-y-[calc(7rem)] relative z-10 hide-scrollbar gap-4 snap px-2 select-none scroll-smooth">
             <Swiper
-                onSlideChange={(swiperCore) => {
-                    let { activeIndex } = swiperCore;
-                    if (activeIndex == 6) activeIndex = 1;
-                    setCurrentImage(FAKE_BANNER[activeIndex - 1]?.src)
-                }}
                 pagination={{
                     dynamicBullets: true,
                 }}
@@ -35,7 +24,7 @@ const SwiperBanner = ({
                 fadeEffect={{
                     crossFade: true,
                 }}
-                loop={true}
+                loop={false}
                 modules={[EffectFade, Autoplay, Pagination, Lazy]}
                 autoplay={{
                     delay: 5000,
@@ -44,19 +33,22 @@ const SwiperBanner = ({
                 }}
             >
                 {
-                    FAKE_BANNER.map((item: any) =>
+                    data?.map((item: Media) =>
                     (
                         <SwiperSlide
-
-                            key={item.title}>
-
-                            <SlideImage title={item.title} image={item.src} />
+                            key={item.id}
+                            className="w-40 h-64"
+                        >
+                            <SlideImage manga={item} />
                         </SwiperSlide>
                     )
                     )
                 }
             </Swiper>
+
+
         </div >
+
     )
 }
 

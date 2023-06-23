@@ -62,7 +62,6 @@ export const getMedia = async (args: MediaArgs & PageArgs, fields?: string) => {
         .from("chapter_counter")
         .select("*")
         .in("mediaId", mediaIdList);
-
     // return mediaList;
     if (error || !chapterCounter?.length) return mediaList;
 
@@ -70,11 +69,18 @@ export const getMedia = async (args: MediaArgs & PageArgs, fields?: string) => {
         const counter = chapterCounter.filter(
             (count) => count.mediaId === media.id
         );
-
         return {
             ...media,
             counter,
         };
 
     });
+}
+
+export const getMediaDetails = async (args: MediaArgs & PageArgs, fields?: string) => {
+    const response = await anilistFetcher<PageQueryResponse>(
+        mediaQuery(fields),
+        args
+    );
+
 }

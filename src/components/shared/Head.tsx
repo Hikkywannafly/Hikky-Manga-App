@@ -7,9 +7,9 @@ interface HeadProps {
     image?: string;
 }
 const Head = ({
-    title = 'Hikky Manga',
-    description = 'Web app đọc truyện tranh online',
-    keywords = 'Next.js, TypeScript, Tailwind, Starter',
+    title,
+    description,
+    keywords,
     image = 'https://nextjs.org/static/images/twitter-cards/nextjs-twitter-card.png',
 }: HeadProps) => {
     return (

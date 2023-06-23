@@ -4,6 +4,7 @@ import { IoIosArrowDown } from 'react-icons/io'
 import { GENRES_COMICS, RANKING_COMICS } from '~/constants';
 import DropDown from '~/components/shared/DropDown';
 import { HeaderSearch, HeaderUser } from '~/components/icons';
+import Link from 'next/link'
 type NavItemProps = {
     label: string,
 
@@ -25,9 +26,9 @@ const Header = () => {
                     {/* logo */}
                     <div className="flex items-center ">
                         <HamburgerMenu />
-                        <div className="font-semibold opacity-80 text-3xl cursor-pointer transform hover:scale-105 transition duration-300 ">
+                        <Link href='/' className="font-semibold opacity-80 text-3xl cursor-pointer transform hover:scale-105 transition duration-300 ">
                             HikkyManga
-                        </div>
+                        </Link>
 
                     </div>
                     {/* navigation */}

@@ -1,6 +1,6 @@
 // 💙
 
-// import { Translation } from ".";
+import { Translation } from ".";
 
 /* eslint-disable */
 
@@ -15,7 +15,6 @@
 // *******************************************************
 // *******************************************************
 // 💙
-
 export type Maybe<T> = T | null;
 
 /** Page of data */
@@ -31,7 +30,6 @@ export interface Page {
     mediaTrends: Maybe<MediaTrend[]>;
     recommendations: Maybe<Recommendation[]>;
 }
-
 export interface PageInfo {
     /** The total number of items. Note: This value is not guaranteed to be accurate, do not rely on this for logic*/
     total: Maybe<number>;
@@ -207,7 +205,7 @@ export interface Media {
     /** Notes for site moderators*/
     modNotes: Maybe<string>;
 
-    //   translations?: Translation[];
+    translations?: Translation[];
 }
 
 /** Media query */

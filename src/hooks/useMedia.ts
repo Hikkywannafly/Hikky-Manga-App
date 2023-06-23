@@ -10,7 +10,10 @@ const useMedia = (
         "queryKey" | "queryFn"
     >
 ) => {
-    return useQuery<Media[]>(["media", { args }], () => getMedia(args), options);
+    return useQuery<Media[]>(["media", { args }], () => getMedia(args),
+        // @ts-ignore
+        options
+    );
 };
 
 export default useMedia;
