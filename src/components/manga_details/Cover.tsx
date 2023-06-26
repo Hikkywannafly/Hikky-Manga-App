@@ -5,10 +5,7 @@ type Props = {}
 const Cover = (props: Props) => {
     return (
         <div>
-            <Image
-                
 
-            />
         </div>
     )
 }
