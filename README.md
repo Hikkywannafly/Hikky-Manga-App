@@ -8,7 +8,7 @@
 
 ## Tech stack
 
--   NextJS + ReactJS
+-   NextJS
 -   Jotai
 -   Mongodb
 -   Next-auth
