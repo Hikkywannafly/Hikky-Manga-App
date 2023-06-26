@@ -77,10 +77,17 @@ export const getMedia = async (args: MediaArgs & PageArgs, fields?: string) => {
     });
 }
 
-export const getMediaDetails = async (args: MediaArgs & PageArgs, fields?: string) => {
-    const response = await anilistFetcher<PageQueryResponse>(
-        mediaQuery(fields),
+export const getMediaDetails = async (
+    args: MediaArgs & PageArgs,
+    fields?: string
+) => {
+    const response = await anilistFetcher<MediaDetailsQueryResponse>(
+        mediaDetailsQuery(fields),
         args
     );
+    const media = response?.Media;
 
-}
+    return {
+        ...media,
+    };
+};

@@ -27,7 +27,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
   });
 
-
   return (
     <React.Fragment>
       <QueryClientProvider client={queryClient}>

@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <React.Fragment>
             <header className="header">
-                This is footer
+                {/* This is footer */}
             </header>
         </React.Fragment>
     )

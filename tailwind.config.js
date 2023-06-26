@@ -27,6 +27,8 @@ module.exports = {
                 quaternary: '#0D1117',
                 blackground: '#0D1117',
                 highlight: '#ffbf00',
+                blackground1: 'rgb(13 17 23 / 1)',
+                blackground1: 'rgb(13 17 23 / 2)',
             }
 
         },

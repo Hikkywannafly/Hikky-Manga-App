@@ -21,9 +21,9 @@ const Header = () => {
     const [isOpenRanking, setIsOpenRanking] = useState(false);
     return (
         <React.Fragment>
-            <header className="p-4 z-[999] px-2 top-0 left-0 w-full fixed ">
-                <div className="mx-auto justify-between flex h-full w-full items-center md:max-w-[644px] lg:max-w-[1200px]">
-                    {/* logo */}
+            <header className="p-4 z-[999] px-2 top-0 left-0 w-full fixed transition duration-500 bg-gradient-to-b from-black/60 via-black/40 to-transparent ">
+                <div className="mx-auto justify-between flex h-full w-full items-center md:max-w-[644px] lg:max-w-[1200px] ">
+                    <div className='absolute inset-0 '> </div>
                     <div className="flex items-center ">
                         <HamburgerMenu />
                         <Link href='/' className="font-semibold opacity-80 text-3xl cursor-pointer transform hover:scale-105 transition duration-300 ">
@@ -31,7 +31,7 @@ const Header = () => {
                         </Link>
 
                     </div>
-                    {/* navigation */}
+
                     <nav className=" hidden md:block">
                         <ul className="flex items-center space-x-8">
                             <li
@@ -57,8 +57,8 @@ const Header = () => {
                             <NavItem label="Tin Tức" />
                         </ul>
                     </nav>
-                    {/* search */}
-                    <div className="flex gap-3 ">
+
+                    <div className="flex gap-3 z-30 ">
                         <HeaderSearch />
                         <HeaderUser />
                     </div>
