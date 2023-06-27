@@ -20,7 +20,7 @@ const Home = () => {
   return (
     <React.Fragment>
       <Head title="Hikky Manga" />
-      <div className="relative mb-[calc(5rem)] md:mb-[calc(8rem)] flex justify-center box-content">
+      <div className="relative ">
         {
           trendingLoading ? <SwiperSkeleton /> : (
             <SwiperBanner
@@ -29,13 +29,6 @@ const Home = () => {
             />
           )
         }
-        {/* banner */}
-        {/* blackground */}
-        {/* <div className="absolute w-full h-[calc(5rem+80%)] md:h-[calc(7rem+80%)] top-0 left-0 brightness-75 animate-fadeSlow"
-          style={{
-            background: `linear-gradient(132deg, ${blackground[0]} 0%, ${blackground[1]} 100%)`
-          }}>
-        </div> */}
 
       </div>
 

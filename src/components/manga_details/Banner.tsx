@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
+import Image from '~/components/shared/Image'
 type Props = {
     banner?: string,
     title: string
@@ -7,7 +7,7 @@ type Props = {
 
 const BannerIntroduct = ({ banner, title }: Props) => {
     return (
-        <div className='h-[400px] w-full '>
+        <div className='relative z-0 w-full h-[200px] md:h-[400px]'>
             <Image
                 src={banner}
                 alt={title}

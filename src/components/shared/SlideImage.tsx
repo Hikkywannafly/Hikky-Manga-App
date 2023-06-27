@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
+import Image from '~/components/shared/Image'
 import { Media } from '~/types/anilist'
 import Link from 'next/link'
 interface SlideImageProps {

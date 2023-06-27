@@ -3,12 +3,14 @@ import { Media, MediaType } from "~/types/anilist";
 import { NextPage, GetStaticPaths, GetStaticProps } from "next";
 import { REVALIDATE_TIME } from "~/constants";
 import { getMediaDetails } from "~/services/anilist";
-import { Banner } from '~/components/manga_details';
+import { Banner, Cover } from '~/components/manga_details';
 import { Section, Head } from "~/components/shared";
+import Tag from "~/components/shared/Tag";
 interface DetailsPageProps {
     manga: Media;
 }
 const DetailsPage: NextPage<DetailsPageProps> = ({ manga }) => {
+    console.log(manga);
     return (
         <React.Fragment>
             <Head
@@ -17,15 +19,41 @@ const DetailsPage: NextPage<DetailsPageProps> = ({ manga }) => {
                 keywords=""
                 key="head"
             />
-            <div className="relative mb-[calc(5rem)] md:mb-[calc(8rem)] flex justify-center box-content">
+            <div className="">
                 <Banner
                     banner={manga.bannerImage}
                     title={manga.title.userPreferred}
                 />
-                <Section>
-                    
+                <Section className="relative ">
+                    <div className="flex gap-8 ">
+                        <div className="flex md:space-x-8">
+                            <div className="shrink-0 relative md:static md:left-0 md:-translate-x-0 w-[120px] md:w-[186px] -mt-48 space-y-6 h-[280px]">
+                                <Cover src={manga.coverImage.extraLarge} alt={manga.title.userPreferred} />
+                            </div>
+
+                        </div >
+                        <div className="">
+                            <div className="-mt-32">
+                                <p className="text-3xl md:text-4xl font-bold mb-2">
+                                    {manga.title.userPreferred}
+                                </p>
+                            </div>
+                            <div>
+                                <div className="flex gap-4 my-6">
+                                    {
+                                        manga.genres.map((gender, index) => {
+                                            return (
+                                                <Tag title={gender} key={index} link="" />
+                                            )
+                                        })
+                                    }
+
+                                </div>
+                            </div>
 
 
+                        </div>
+                    </div>
                 </Section>
             </div>
         </React.Fragment>

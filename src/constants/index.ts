@@ -16,4 +16,26 @@ export const RANKING_COMICS: DropDownItem[] = [
     { label: "Được xem nhiều", href: "view" },
 ]
 
+export const VietNameseGenres = {
+    "Action": "Hành động",
+    "Adventure": "Phiêu lưu",
+    "Comedy": "Hài hước",
+    "Drama": "Drama",
+    "Ecchi": "Ecchi",
+    "Fantasy": "Viễn tưỡng",
+    "Horror": "Kinh dị",
+    "Mahou Shoujo": "Mahou Shoujo",
+    "Mecha": "Mecha",
+    "Music": "Âm nhạc",
+    "Mystery": "Bí ẩn",
+    "Psychological": "Tâm lý",
+    "Romance": "Lãng mạn",
+    "Sci-Fi": "Khoa học viễn tưởng",
+    "Slice of Life": "Đời thường",
+    "Sports": "Thể thao",
+    "Supernatural": "Siêu nhiên",
+    "Thriller": "Thriller",
+}
+
+
 export const REVALIDATE_TIME = 24 * 60 * 60 // 24 hours

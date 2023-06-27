@@ -39,6 +39,7 @@ const Image: React.FC<ImageProps> = ({ onLoadingComplete, ...props }) => {
         >
             <NextImage
                 onLoadingComplete={handleLoadingComplete}
+                unoptimized
                 {...props}
             >
 
