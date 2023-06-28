@@ -13,7 +13,6 @@ const MyModal = () => {
         setShowSearchModal(true)
     }
 
-
     return (
         <Transition appear show={showSearchModal} as={Fragment}>
             <Dialog as="div" className="relative z-[999] " onClose={closeModal}>
@@ -38,7 +37,6 @@ const MyModal = () => {
                             leave="ease-in duration-200"
                             leaveFrom="opacity-100 scale-100"
                             leaveTo="opacity-0 scale-95"
-
                         >
                             <Dialog.Panel className="max-h-[70vh] w-[85%] md:w-[75%] lg:max-h-[85vh] 
                              transform overflow-hidden rounded-2xl bg-blackground p-10 text-left align-middle shadow-xl transition-all">

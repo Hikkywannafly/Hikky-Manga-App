@@ -33,7 +33,7 @@ const DropDown = ({
 
     return (
         <ul
-            className="animate-fade absolute top-full left-1/2 z-50 flex h-fit w-fit -translate-x-1/2 flex-col flex-nowrap items-center justify-evenly rounded-2xl bg-secondary  py-1 transition-all "
+            className="animate-fade absolute top-full left-1/2 z-50 flex h-fit w-fit -translate-x-1/2 flex-col flex-nowrap items-center justify-evenly rounded-2xl bg-slate-800  py-1 transition-all "
             onMouseLeave={() => {
                 setOffsetTop(0);
             }}
@@ -60,9 +60,10 @@ const DropDown = ({
                     );
                 })}
             <li
+                // bg-[#555759]
                 ref={effectActive}
                 className={`slide absolute top-2 -z-10 h-12 w-[85%] ${offsetTop === 0 && 'opacity-0'
-                    } rounded-2xl bg-[#555759] px-6 duration-150`}
+                    } rounded-2xl bg-slate-600  px-6 duration-150`}
             ></li>
         </ul>
 

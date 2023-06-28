@@ -1,15 +1,15 @@
 import { Media, Page, Studio } from "~/types/anilist";
 
 export type PageQueryResponse = {
-    Page: Page;
+  Page: Page;
 };
 
 export type MediaDetailsQueryResponse = {
-    Media: Media;
+  Media: Media;
 };
 
 export type StudioDetailsQueryResponse = {
-    Studio: Studio;
+  Studio: Studio;
 };
 
 export const mediaDefaultFields = `
@@ -58,6 +58,7 @@ nextAiringEpisode {
   airingAt
   episode
 }
+
 `;
 
 export const mediaQuery = (fields: string = mediaDefaultFields) => `
@@ -219,7 +220,7 @@ query Media(
 }
 
 `;
-
+// check query for media details
 export const mediaDetailsDefaultFields = `
 id
 idMal
@@ -328,6 +329,18 @@ studios {
     hasNextPage
   }
 }
+staff(perPage:1 , sort: [ROLE, RELEVANCE]) {
+  edges {
+    node {
+      id
+      name {
+        full
+        userPreferred
+      }
+    }
+  }
+}
+
 isAdult
 recommendations {
   nodes {
@@ -352,7 +365,7 @@ airingSchedule(notYetAired: true, perPage: 1) {
 `;
 
 export const mediaDetailsQuery = (
-    fields: string = mediaDetailsDefaultFields
+  fields: string = mediaDetailsDefaultFields
 ) => `
 query Media(
   $id: Int
@@ -525,7 +538,7 @@ media {
 `;
 
 export const airingSchedulesQuery = (
-    fields: string = airingSchedulesDefaultFields
+  fields: string = airingSchedulesDefaultFields
 ) => `
 query AiringSchedule($page: Int = 1, $perPage: Int = 20, $id: Int, $mediaId: Int, $episode: Int, $airingAt: Int, $notYetAired: Boolean, $id_not: Int, $id_in: [Int], $id_not_in: [Int], $mediaId_not: Int, $mediaId_in: [Int], $mediaId_not_in: [Int], $episode_not: Int, $episode_in: [Int], $episode_not_in: [Int], $episode_greater: Int, $episode_lesser: Int, $airingAt_greater: Int, $airingAt_lesser: Int, $sort: [AiringSort]) {
   Page(page: $page, perPage: $perPage) {
@@ -558,7 +571,7 @@ mediaRecommendation {
 `;
 
 export const recommendationsQuery = (
-    fields: string = recommendationsDefaultFields
+  fields: string = recommendationsDefaultFields
 ) => `
 query Recommendation ($page:Int = 1, $perPage: Int = 20, $id: Int,$mediaId: Int,$mediaRecommendationId: Int,$userId: Int,$rating: Int,$onList: Boolean,$rating_greater: Int,$rating_lesser: Int,$sort: [RecommendationSort]) {
   Page(page: $page, perPage: $perPage) {

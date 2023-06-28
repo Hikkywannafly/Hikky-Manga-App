@@ -1,5 +1,5 @@
 import { Media } from "~/types/anilist";
-import { VietNameseGenres } from "~/constants";
+import { VietNameseTitles } from "~/constants";
 
 export const slice_title = (title: any) => {
     return title.replace(/^a-zA-Z0-9 ]/g, '').toLowerCase().trim().replace(/\s/g, '-');
@@ -36,9 +36,9 @@ export const createTitleFromParam = (title: string) => {
     return title.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
 };
 
-export const createGenres = (genres: string[]) => {
+export const TranslateGenres = (genres: string[]) => {
     genres = genres.map((genre) => {
-        return VietNameseGenres[genre];
+        return VietNameseTitles[genre];
     }
     );
 }

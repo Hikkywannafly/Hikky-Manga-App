@@ -30,6 +30,7 @@ import {
     studioDetailsQuery,
     StudioDetailsQueryResponse,
     studiosQuery,
+    mediaDetailsDefaultFields,
 } from "./queries";
 
 const GRAPHQL_URL = "https://graphql.anilist.co";

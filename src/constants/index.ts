@@ -16,7 +16,7 @@ export const RANKING_COMICS: DropDownItem[] = [
     { label: "Được xem nhiều", href: "view" },
 ]
 
-export const VietNameseGenres = {
+export const VietNameseTitles = {
     "Action": "Hành động",
     "Adventure": "Phiêu lưu",
     "Comedy": "Hài hước",
@@ -35,6 +35,18 @@ export const VietNameseGenres = {
     "Sports": "Thể thao",
     "Supernatural": "Siêu nhiên",
     "Thriller": "Thriller",
+    "JP": "Nhật bản",
+    "KR": "Hàn quốc",
+    "CN": "Trung quốc",
+    "US": "Mỹ",
+    "VN": "Việt nam",
+    "TW": "Đài loan",
+    "RELEASING": "Đang phát hành",
+    "FINISHED": "Hoàn thành",
+    "NOT_YET_RELEASED": "Chưa phát hành",
+    "CANCELLED": "Đã hủy",
+    "HIATUS": "Tạm ngưng",
+    "YEAR": "Năm",
 }
 
 
