@@ -30,10 +30,9 @@ const DetailsPage: NextPage<DetailsPageProps> = ({ manga }) => {
                 <Section className="relative ">
                     <div className="flex gap-8 ">
                         <div className="flex md:space-x-8">
-                            <div className="shrink-0 relative md:static md:left-0 md:-translate-x-0 w-[120px] md:w-[186px] -mt-48 space-y-6 h-[280px]">
+                            <div className="shrink-0 relative md:static md:left-0 md:-translate-x-0 w-[120px] md:w-[190px] -mt-32 h-[290px] space-y-6 ">
                                 <Cover src={manga.coverImage.extraLarge} alt={manga.title.userPreferred} />
                             </div>
-
                         </div >
                         <div className="-mt-32">
                             <div className="text-[20px] text-gray-400 font-semibold">
@@ -86,10 +85,10 @@ const DetailsPage: NextPage<DetailsPageProps> = ({ manga }) => {
                                     value={manga.isAdult ? "18+" : ""}
                                 />
                             </div>
-                            <div className="mt-10">
+                            <div className="mt-10 ">
                                 <Editor
                                     readOnly
-                                    editorClassName="text-2xl"
+                                    editorClassName="text-[16px] font-medium text-gray-100"
                                     defaultContent={manga.description}
                                 />
                             </div>
