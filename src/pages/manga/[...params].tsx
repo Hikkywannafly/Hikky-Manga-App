@@ -9,6 +9,7 @@ import Tag from "~/components/shared/Tag";
 import { VietNameseTitles } from "~/constants";
 import Editor from '~/components/shared/Editor';
 import InfoItem from "~/components/shared/InfoItem";
+import Button from "~/components/shared/Button";
 interface DetailsPageProps {
     manga: Media;
 }
@@ -32,6 +33,16 @@ const DetailsPage: NextPage<DetailsPageProps> = ({ manga }) => {
                         <div className="flex md:space-x-8">
                             <div className="shrink-0 relative md:static md:left-0 md:-translate-x-0 w-[120px] md:w-[190px] -mt-32 h-[290px] space-y-6 ">
                                 <Cover src={manga.coverImage.extraLarge} alt={manga.title.userPreferred} />
+                            </div>
+                            <div className="">
+                                {/* <BaseButton
+                                    className="text-base flex items-center space-x-2 px-3 py-2 rounded-md hover:bg-opacity-80 hover:bg-primary-500"
+                                    iconClassName="text-white mr-2"
+                                    isLoading={true}
+                                >
+                                    <p>Test</p>
+                                </BaseButton> */}
+
                             </div>
                         </div >
                         <div className="-mt-32">
@@ -97,8 +108,8 @@ const DetailsPage: NextPage<DetailsPageProps> = ({ manga }) => {
                         </div>
                     </div>
                 </Section>
-            </div>
-        </React.Fragment>
+            </div >
+        </React.Fragment >
     )
 }
 
