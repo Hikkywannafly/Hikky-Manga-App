@@ -3,11 +3,13 @@ import StarterKit from '@tiptap/starter-kit';
 import { EditorContent, EditorOptions, useEditor } from "@tiptap/react";
 import { Editor as EditorType } from '@tiptap/react';
 import classNames from 'classnames';
+
 export interface EditorProps extends Partial<EditorOptions> {
     defaultContent?: string;
     readOnly?: boolean;
     className?: string;
     editorClassName?: string;
+    containerProps?: React.HTMLAttributes<HTMLDivElement>;
 
 }
 
@@ -38,12 +40,12 @@ const Editor = React.forwardRef<EditorType, EditorProps>(
             ],
             content: defaultContent,
             editable: !readOnly,
-
-
+            ...editorOptions,
         }
         );
         // https://codestus.com/posts/tim-hieu-ve-useimperativehandle-hook-trong-react
         useImperativeHandle(ref, () => editor, [editor]);
+
 
         return (
             <div className={classNames(!readOnly && 'border border-gray-600', className)} >

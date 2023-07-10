@@ -10,11 +10,15 @@ import { VietNameseTitles } from "~/constants";
 import Editor from '~/components/shared/Editor';
 import InfoItem from "~/components/shared/InfoItem";
 import Button from "~/components/shared/Button";
+import { HiOutlineBookOpen } from 'react-icons/hi';
+import { MdNotificationsActive, MdNotificationsNone } from "react-icons/md";
+import MediaDescription from "~/components/shared/MediaDescription";
+import TabsBar from "~/components/manga_details/TabsBar";
 interface DetailsPageProps {
     manga: Media;
 }
 const DetailsPage: NextPage<DetailsPageProps> = ({ manga }) => {
-    console.log(manga);
+
     return (
         <React.Fragment>
             <Head
@@ -28,21 +32,24 @@ const DetailsPage: NextPage<DetailsPageProps> = ({ manga }) => {
                     banner={manga.bannerImage}
                     title={manga.title.userPreferred}
                 />
-                <Section className="relative ">
+                <Section className="relative">
                     <div className="flex gap-8 ">
-                        <div className="flex md:space-x-8">
+                        <div className="flex flex-col gap-10 ">
                             <div className="shrink-0 relative md:static md:left-0 md:-translate-x-0 w-[120px] md:w-[190px] -mt-32 h-[290px] space-y-6 ">
                                 <Cover src={manga.coverImage.extraLarge} alt={manga.title.userPreferred} />
                             </div>
-                            <div className="">
-                                {/* <BaseButton
-                                    className="text-base flex items-center space-x-2 px-3 py-2 rounded-md hover:bg-opacity-80 hover:bg-primary-500"
-                                    iconClassName="text-white mr-2"
-                                    isLoading={true}
-                                >
-                                    <p>Test</p>
-                                </BaseButton> */}
 
+                            <div className="flex items-center space-x-3 justify-between gap-2  ">
+                                <Button
+                                    primary
+                                    LeftIcon={HiOutlineBookOpen}
+                                    iconClassName="w-8 h-8"
+                                    className="text-white grow z-50 bg-blue-600 flex items-center justify-center py-2">
+                                    <p className="text-2xl ">Đọc ngay</p>
+                                </Button>
+                                <div className=" rounded-full  hover:bg-slate-600 p-4 duration-500">
+                                    <MdNotificationsNone className="w-10 h-10 " />
+                                </div>
                             </div>
                         </div >
                         <div className="-mt-32">
@@ -97,14 +104,13 @@ const DetailsPage: NextPage<DetailsPageProps> = ({ manga }) => {
                                 />
                             </div>
                             <div className="mt-10 ">
-                                <Editor
+                                <MediaDescription
+                                    containerClassName="mt-4 mb-8 hidden md:block"
+                                    className="text-gray-300 hover:text-gray-100 transition duration-300"
                                     readOnly
-                                    editorClassName="text-[16px] font-medium text-gray-100"
                                     defaultContent={manga.description}
                                 />
                             </div>
-
-
                         </div>
                     </div>
                 </Section>

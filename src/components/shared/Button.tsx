@@ -16,10 +16,10 @@ const Button: React.FC<ButtonProps> = ({
         <BaseButton
             type="button"
             className={classNames(
-                "text-base flex items-center space-x-2 px-3 py-2 rounded-md hover:bg-opacity-80",
+                "bg-opacity-50 hover:bg-opacity-60 text-white px-1 md:px-2 py-1 md:py-5 rounded-xl font-bold",
                 className,
-                props.primary && "hover:bg-primary-500",
-                secondary && "bg-transparent hover:bg-white/20"
+                props.primary && "hover:bg-blue-800",
+                secondary && "bg-transparent hover:bg-blue-800"
             )}
             {...props}
         >

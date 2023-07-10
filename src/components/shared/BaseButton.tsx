@@ -80,7 +80,7 @@ const BaseButton = React.forwardRef<HTMLButtonElement, BaseButtonProps>(
                     (isLoading || disabled) && "text-gray-300 cursor-not-allowed",
                     className,
                     buttonClassName,
-                    (LeftIcon || RightIcon || isLoading) && "gap-x-2"
+                    (LeftIcon || RightIcon || isLoading) && "gap-x-3"
                 )}
                 onClick={(e) => {
                     if (disabled) return;
