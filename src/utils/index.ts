@@ -1,6 +1,6 @@
-import { Media } from "~/types/anilist";
+import { Media, Character } from "~/types/anilist";
 import { VietNameseTitles } from "~/constants";
-
+import { DropDownItem } from "~/components/shared/DropDown";
 export const slice_title = (title: any) => {
     return title.replace(/^a-zA-Z0-9 ]/g, '').toLowerCase().trim().replace(/\s/g, '-');
 
@@ -31,6 +31,10 @@ export const createMediaDetailUrl = (media: Media) => {
     return `/manga/${media.id}/${slug_title(media.title.userPreferred)}`;
 
 }
+export const createCharacterDetailsUrl = (Character: Character) => {
+
+    return `/character/${Character.id}/${slug_title(Character.name.userPreferred)}`
+}
 
 export const createTitleFromParam = (title: string) => {
     return title.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
@@ -41,4 +45,14 @@ export const TranslateGenres = (genres: string[]) => {
         return VietNameseTitles[genre];
     }
     );
+}
+
+export const TranslateToVietNames = (genres: string[]) => {
+
+}
+
+// terminal
+export const getHrefByLabel = (label: string, constants: DropDownItem[]): string | undefined => {
+    const item = constants.find((item) => item.label === label);
+    return item ? item.href : undefined;
 }

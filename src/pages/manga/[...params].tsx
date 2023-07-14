@@ -13,12 +13,15 @@ import Button from "~/components/shared/Button";
 import { HiOutlineBookOpen } from 'react-icons/hi';
 import { MdNotificationsActive, MdNotificationsNone } from "react-icons/md";
 import MediaDescription from "~/components/shared/MediaDescription";
-import TabsBar from "~/components/manga_details/TabsBar";
+import DetailsSection from "~/components/shared/DetailsSection";
+import { CharacterCard } from "~/components/manga_details";
 interface DetailsPageProps {
     manga: Media;
 }
 const DetailsPage: NextPage<DetailsPageProps> = ({ manga }) => {
 
+    console.log(JSON.stringify(manga, null, 2));
+    
     return (
         <React.Fragment>
             <Head
@@ -102,6 +105,7 @@ const DetailsPage: NextPage<DetailsPageProps> = ({ manga }) => {
                                     title={`Độ tuổi`}
                                     value={manga.isAdult ? "18+" : ""}
                                 />
+
                             </div>
                             <div className="mt-10 ">
                                 <MediaDescription
@@ -113,8 +117,61 @@ const DetailsPage: NextPage<DetailsPageProps> = ({ manga }) => {
                             </div>
                         </div>
                     </div>
+
                 </Section>
-            </div >
+                <Section className="w-full min-h-screen gap-8 mt-2 md:mt-8 space-y-8 md:space-y-0 md:grid md:grid-cols-10 sm:px-12">
+                    <div className="md:col-span-2 h-[max-content] space-y-4">
+                        <div className="flex flex-row md:flex-col overflow-x-auto  p-5 rounded-xl gap-4 [&>*]:shrink-0 md:no-scrollbar">
+                            <InfoItem title="English" value={manga.title.english} />
+                            <InfoItem title="Native" value={manga.title.native} />
+                            <InfoItem title="Romanji" value={manga.title.romaji} />
+                            <InfoItem
+                                title="Phổ biến"
+                                value={manga.popularity}
+                            />
+                            <InfoItem
+                                title={"Yêu thích"}
+                                value={(manga.favourites)}
+                            />
+                            <InfoItem
+                                title={"Trending"}
+                                value={(manga.trending)}
+                            />
+
+                            <InfoItem
+                                title={"Tên khác"}
+                                value={manga.synonyms.join("\n")}
+                            />
+                        </div>
+
+                    </div >
+
+                    <div className="md:col-span-8 space-y-12">
+                        <DetailsSection title="Chapper" >
+                            {
+
+                            }
+                        </DetailsSection>
+                        {
+                            !!manga.characters.edges.length && (
+                                <DetailsSection
+                                    title={'Nhân vật'}
+                                    className="w-full grid md:grid-cols-2 grid-cols-1 gap-4"
+                                >
+                                    {manga.characters.edges.map((characterEdge, index) => (
+                                        <CharacterCard
+                                            characterEdge={characterEdge}
+                                            key={index}
+                                        />
+                                    ))}
+                                </DetailsSection>
+                            )
+                        }
+                    </div>
+
+
+                </Section>
+            </div>
         </React.Fragment >
     )
 }

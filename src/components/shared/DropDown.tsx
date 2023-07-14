@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import Link from 'next/link';
 import { IoIosArrowForward } from 'react-icons/io'
-
+import { BaseSyntheticEvent, } from 'react';
 export type DropDownItem = {
     label: string,
     href: string,
@@ -13,15 +13,15 @@ export interface DropDownProps {
     isMore: boolean,
 }
 
-const DropDown = ({
+const DropDown: React.FC<DropDownProps> = (({
     options,
     show,
     isMore,
-}: DropDownProps) => {
+}) => {
 
     const [offsetTop, setOffsetTop] = useState(0);
 
-    const effectActive = useRef<HTMLLIElement>(null);
+    const effectActive = useRef<any>(null);
 
     useEffect(() => {
         if (effectActive.current) {
@@ -43,7 +43,7 @@ const DropDown = ({
                     return (
                         <li
                             key={index}
-                            onMouseEnter={(e) => {
+                            onMouseEnter={(e: BaseSyntheticEvent) => {
                                 setOffsetTop(e.currentTarget.offsetTop);
                             }}
                         >
@@ -68,6 +68,6 @@ const DropDown = ({
         </ul>
 
     )
-}
+});
 
 export default DropDown

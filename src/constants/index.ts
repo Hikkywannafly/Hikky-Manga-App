@@ -1,5 +1,7 @@
 import { DropDownItem } from "~/components/shared/DropDown"
 
+// vi - VietNamese
+
 export const GENRES_COMICS: DropDownItem[] = [
     { label: "Action", href: "Action" },
     { label: "Adventure", href: "Adventure" },
@@ -48,6 +50,36 @@ export const VietNameseTitles = {
     "HIATUS": "Tạm ngưng",
     "YEAR": "Năm",
 }
+
+export const GENRES_MANGA: DropDownItem[] = [
+    { label: "Action", href: "Hành động" },
+    { label: "Adventure", href: "Phiêu lưu" },
+    { label: "Comedy", href: "Hài hước" },
+    { label: "Drama", href: "Drama" },
+    { label: "Ecchi", href: "Ecchi" },
+    { label: "Fantasy", href: "Viễn tưởng" },
+    { label: "Horror", href: "Kinh dị" },
+    { label: "Mahou Shoujo", href: "Mahou Shoujo" },
+    { label: "Mecha", href: "Mecha" },
+    { label: "Music", href: "Âm nhạc" },
+    { label: "Mystery", href: "Bí ẩn" },
+    { label: "Psychological", href: "Tâm lý" },
+    { label: "Romance", href: "Lãng mạn" },
+    { label: "Sci-Fi", href: "Khoa học viễn tường" },
+    { label: "Slice of Life", href: "Đời thường" },
+    { label: "Sports", href: "Thể thao" },
+    { label: "Supernatural", href: "Siêu nhiên" },
+    { label: "Thriller", href: "Giật gân" },
+    { label: "Xem thêm", href: "Xem thêm" },
+
+];
+
+
+export const CHARACTERS_ROLES: DropDownItem[] = [
+    { label: "MAIN", href: "Nhân vật chính" },
+    { label: "SUPPORTING", href: "Nhân vật phụ" },
+    { label: "BACKGROUND", href: "Nhân vật làm nền" },
+]
 
 
 export const REVALIDATE_TIME = 24 * 60 * 60 // 24 hours
